@@ -7,7 +7,7 @@ namespace resistencias.Application
 {
     public class Services
     {
-        public string calcular_alcoholemia(string banda1, string banda2, string banda3, string banda4)
+        public string calcular_resistencia(string banda1, string banda2, string banda3, string banda4)
         {
             string valor = "";
             int resistencia = 0;

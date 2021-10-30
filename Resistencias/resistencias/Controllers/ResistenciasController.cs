@@ -25,7 +25,7 @@ namespace resistencias.Controllers
         public string calcular(string banda1, string banda2, string banda3, string banda4)
         {
             var services = new Services();
-            var result = services.calcular_alcoholemia(banda1, banda2, banda3, banda4);
+            var result = services.calcular_resistencia(banda1, banda2, banda3, banda4);
             return result;
         }
     }
