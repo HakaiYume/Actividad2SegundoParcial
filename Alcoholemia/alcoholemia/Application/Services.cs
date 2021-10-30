@@ -66,11 +66,11 @@ namespace alcoholemia.Application
 
             if (0.8 < alcoholemia)
             {
-                msg = "Buen Viaje";
+                msg = "La Persoa No Es Apta Para Conducir. Solicita Un Taxi o Uber...";
             }
             else
             {
-                msg = "La Persoa No Es Apta Para Conducir. Solicita Un Taxi o Uber...";
+                msg = "Buen Viaje";
             }
             
             string result = "El Nivel De Alcohol En Sangre (Alcoholemia) Es: " + alcoholemia + "g/L " + msg;
