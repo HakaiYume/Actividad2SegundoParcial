@@ -18,7 +18,7 @@ namespace resistencias.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class alcoholemiaController : ControllerBase
+    public class ResistenciasController : ControllerBase
     {
         [HttpPost]
         [Route("Calcular/")]

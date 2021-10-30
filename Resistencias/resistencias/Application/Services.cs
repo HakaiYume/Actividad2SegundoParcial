@@ -14,10 +14,10 @@ namespace resistencias.Application
             double tolerancia = 0;
             string porcentaje = "";
 
-            color1 = banda1.ToLower();
-            color2 = banda2.ToLower();
-            color3 = banda3.ToLower();
-            color4 = banda4.ToLower();
+            string color1 = banda1.ToLower();
+            string color2 = banda2.ToLower();
+            string color3 = banda3.ToLower();
+            string color4 = banda4.ToLower();
 
             switch(color1)
             {
