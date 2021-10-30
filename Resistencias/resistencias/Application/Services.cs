@@ -3,77 +3,140 @@ using System.Collections.Generic;
 using System.Linq;
 
 
-namespace alcoholemia.Application
+namespace resistencias.Application
 {
     public class Services
     {
-        public string calcular_alcoholemia(string bebida, int cantidad, double peso)
+        public string calcular_alcoholemia(string banda1, string banda2, string banda3, string banda4)
         {
-            int ml = 0;
-            double grado_alcohol = 0;
-            double alcoholemia = 0;
-            double volmen_sangre = 0;
-            string msg = "";
+            string valor = "";
+            int resistencia = 0;
+            double tolerancia = 0;
+            string porcentaje = "";
 
-            switch(bebida.ToLower())
+            color1 = banda1.ToLower();
+            color2 = banda2.ToLower();
+            color3 = banda3.ToLower();
+            color4 = banda4.ToLower();
+
+            switch(color1)
             {
-                case "cerveza":
-                ml = 330;
-                grado_alcohol = 5;
-                break;
-
-                case "vino":
-                ml = 100;
-                grado_alcohol = 12;
-                break;
-
-                case "cava":
-                ml = 100;
-                grado_alcohol = 12;
-                break;
-
-                case "vermu":
-                ml = 70;
-                grado_alcohol = 17;
-                break;
-
-                case "licor":
-                ml = 45;
-                grado_alcohol = 23;
-                break;
-
-                case "brandy":
-                ml = 45;
-                grado_alcohol = 38;
-                break;
-
-                case "combinado":
-                ml = 50;
-                grado_alcohol = 38;
-                break;
-
+                case "negro":
+                    valor = "0";
+                    break;
+                case "cafe":
+                    valor = "1";
+                    break;
+                case "rojo":
+                    valor = "2";
+                    break;
+                case "naranja":
+                    valor = "3";
+                    break;
+                case "amarillo":
+                    valor = "4";
+                    break;
+                case "verde":
+                    valor = "5";
+                    break;
+                case "azul":
+                    valor = "6";
+                    break;
+                case "violeta":
+                    valor = "7";
+                    break;
+                case "gris":
+                    valor = "8";
+                    break;
+                case "blanco":
+                    valor = "9";
+                    break;
                 default:
-                return "Bebida No Balida";
+                    return "Color No valido Para La Banda 1";
             }
 
-            alcoholemia = cantidad * ml;
-            alcoholemia = (grado_alcohol / 100) * alcoholemia;
-            alcoholemia = 0.15 * alcoholemia;
-            alcoholemia = 0.789 * alcoholemia;
-            volmen_sangre = 0.08 * peso;
-            alcoholemia = alcoholemia / volmen_sangre;
-            alcoholemia = Math.Round(alcoholemia, 3);
-
-            if (0.8 < alcoholemia)
+            switch(color2)
             {
-                msg = "La Persoa No Es Apta Para Conducir";
-            }
-            else
-            {
-                msg = "Buen Viaje";
+                case "negro":
+                    valor += "0";
+                    break;
+                case "cafe":
+                    valor += "1";
+                    break;
+                case "rojo":
+                    valor += "2";
+                    break;
+                case "naranja":
+                    valor += "3";
+                    break;
+                case "amarillo":
+                    valor += "4";
+                    break;
+                case "verde":
+                    valor += "5";
+                    break;
+                case "azul":
+                    valor += "6";
+                    break;
+                case "violeta":
+                    valor += "7";
+                    break;
+                case "gris":
+                    valor += "8";
+                    break;
+                case "blanco":
+                    valor += "9";
+                    break;
+                default:
+                    return "Color No valido Para La Banda 2";
             }
             
-            string result = "El Nivel De Alcohol En Sangre (Alcoholemia) Es: " + alcoholemia + "g/L " + msg;
+            switch(color3)
+            {
+                case "negro":
+                    resistencia = Convert.ToInt32(valor) * 1;
+                    break;
+                case "cafe":
+                    resistencia = Convert.ToInt32(valor) * 10;
+                    break;
+                case "rojo":
+                    resistencia = Convert.ToInt32(valor) * 100;
+                    break;
+                case "naranja":
+                    resistencia = Convert.ToInt32(valor) * 1000;
+                    break;
+                case "amarillo":
+                    resistencia = Convert.ToInt32(valor) * 10000;
+                    break;
+                case "verde":
+                    resistencia = Convert.ToInt32(valor) * 100000;
+                    break;
+                case "azul":
+                    resistencia = Convert.ToInt32(valor) * 1000000;
+                    break;
+                    default:
+                    return "Color No valido Para La Banda 3";
+            }
+
+            switch(color4)
+            {
+                case "rojo":
+                    tolerancia = resistencia * 0.02;
+                    porcentaje = "2%";
+                    break;
+                case "dorado":
+                    tolerancia = resistencia * 0.05;
+                    porcentaje = "5%";
+                    break;
+                case "plata":
+                    tolerancia = resistencia * 0.1;
+                    porcentaje = "10%";
+                    break;
+                default:
+                    return "Color No valido Para La Banda 4";
+            }
+
+            string result = "La Resistencia Es De " + resistencia + "Ω y Tiene Una Tolerancias Del " + porcentaje + ", Por Lo Que, Puede Soportar Valores Entre " + (resistencia + tolerancia) + "Ω y " + (resistencia - tolerancia) + "Ω";
             return result;
         }
     }

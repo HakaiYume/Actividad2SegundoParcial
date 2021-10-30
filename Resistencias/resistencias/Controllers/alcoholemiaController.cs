@@ -1,6 +1,6 @@
 using System.Collections;
 using Microsoft.AspNetCore.Mvc;
-using alcoholemia.Application;
+using resistencias.Application;
 using System.Collections.Generic;
 
 /* 
@@ -14,7 +14,7 @@ using System.Collections.Generic;
     Grupo: A
 */
 
-namespace alcoholemia.Controllers
+namespace resistencias.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
@@ -22,10 +22,10 @@ namespace alcoholemia.Controllers
     {
         [HttpPost]
         [Route("Calcular/")]
-        public string calcular(string bebida, int cantidad, double peso)
+        public string calcular(string banda1, string banda2, string banda3, string banda4)
         {
             var services = new Services();
-            var result = services.calcular_alcoholemia(bebida, cantidad, peso);
+            var result = services.calcular_alcoholemia(banda1, banda2, banda3, banda4);
             return result;
         }
     }
