@@ -53,7 +53,7 @@ namespace alcoholemia.Application
                 break;
 
                 default:
-                return "Bebida No Balida";
+                return "Bebida No Valida";
             }
 
             alcoholemia = cantidad * ml;
@@ -66,11 +66,11 @@ namespace alcoholemia.Application
 
             if (0.8 < alcoholemia)
             {
-                msg = "La Persoa No Es Apta Para Conducir";
+                msg = "Buen Viaje";
             }
             else
             {
-                msg = "Buen Viaje";
+                msg = "La Persoa No Es Apta Para Conducir. Solicita Un Taxi o Uber...";
             }
             
             string result = "El Nivel De Alcohol En Sangre (Alcoholemia) Es: " + alcoholemia + "g/L " + msg;

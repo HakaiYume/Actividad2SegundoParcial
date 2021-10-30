@@ -7,7 +7,7 @@ using System.Collections.Generic;
     Universidad Tecnológica Metropolitana
     Aplicaciones Web Orientadas a Objetos
     Docente: Chuc Uc Joel Ivan
-    Actividad: alcoholemia
+    Actividad: Resistencias
     Alumno: Daniel Francisco Puch Ceballos
     Cuatrimestre: 4
     Parcial: 2
